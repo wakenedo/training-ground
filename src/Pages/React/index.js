@@ -1,4 +1,5 @@
 import React from 'react'
+import UseState from './Exercises/UseState'
 
 const ReactJS = () => {
   return (
@@ -8,6 +9,7 @@ const ReactJS = () => {
           React
         </a>
       </h1>
+      <UseState />
     </div>
   )
 }
