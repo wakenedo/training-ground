@@ -1,5 +1,4 @@
 import React from 'react'
-import MyCoolCodeBlock from '../../../../components/MyCoolCodeBlock';
 
 
 
@@ -16,9 +15,6 @@ modifyArray(arr, function () {
     console.log('array has been modified', arr)
 })
 
-
-
-  
 
 const CallBackFunctions = ( ) => {
     return (
