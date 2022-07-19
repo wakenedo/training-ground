@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Counter } from './Exercises/Counter'
+import CallBackFunctions from './Exercises/CallbackFunctions'
 
 const JavaScript = () => {
     return (
@@ -11,7 +12,7 @@ const JavaScript = () => {
                 </a>
             </h1>
             <Counter />
-
+            <CallBackFunctions />
         </div>
     )
 }
