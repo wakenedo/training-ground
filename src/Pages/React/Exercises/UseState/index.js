@@ -8,7 +8,8 @@ const UseState = () => {
     const [marginTop, setMarginTop] = useState('298px')
     const [points, setPoints] = useState(0)
 
-    console.log(backgroundColor)
+    console.log('Background log:', backgroundColor)
+    console.log('Margin log', marginTop,)
     const increment = () => {
         return counter + 1
     }
@@ -32,7 +33,7 @@ const UseState = () => {
     const backgroundColorBlue = () => {
 
         if (backgroundColor === '#3388ff') {
-            alert('You dropped the ball 🏀 ! Same Background color', backgroundColor)
+            alert('You dropped the ball 🏀 ! Same Background color', backgroundColor,)
         } if (backgroundColor !== '#3388ff') {
             setBackgroundColor('#3388ff')
 
@@ -52,7 +53,7 @@ const UseState = () => {
         return backgroundColor
     }
 
-    const  marginTopLow  = () => {
+    const marginTopLow = () => {
         if (backgroundColor === '#ffeb33') {
             setMarginTop('18px')
         } if (marginTop !== '18px') {
@@ -82,24 +83,47 @@ const UseState = () => {
 
     const regularPoints = () => {
         if (backgroundColor === '#ff3333') {
-           return points + 1
+            var addPoints = points + 2
+            var pointsAdded = addPoints
+            var verification2 = points !== 0
+            var verification3 = points !== pointsAdded
+
+            console.log('pointsAdded log:', pointsAdded,)
+            console.log('addPoints log:', addPoints,)
+            console.log('points log:', points)
+
+            console.log('verifications 2 & 3 log:', verification2, '&', verification3,)
             
-        }
-        console.log(points)
-        return points
-        
+            
+            if (verification2) {
+             return   
+            }
+            setPoints(addPoints)
+            
+
+
+
+            //setPoints(points)
+            //console.log('sum log:', sum)
+
+            return points
+        } 
+
     }
 
-    console.log(regularPoints())
-    console.log(backgroundColor,)
-    console.log(marginTop,)
+
+
+    console.log('Points log:', points)
+    console.log('Regular points log:', regularPoints(points))
+    console.log('Change background-color log:', backgroundColor,)
+
     return (
         <>
             <div>This is React Increment and Decrement counter: {counter} Exercise</div>
             <button onClick={() => setCounter(increment())}>Increment</button>
             <button onClick={() => setCounter(decrement())}>Decrement</button>
             <div
-
+                onChange={() => regularPoints(setPoints(points))}
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -112,7 +136,8 @@ const UseState = () => {
                 }}
             >
                 <h1>
-                    This is Changing color Div {backgroundColor} exercise
+                    This is useState game exercise
+
                 </h1>
 
                 <button onClick={() => backgroundColorYellow(marginTopLow())}>Yellow!</button>
@@ -121,23 +146,24 @@ const UseState = () => {
                 <div
                     width="100%"
                     height='100%'
-                    
-                    
-                >   
-                    
+
+
+                >
+
                     <img
-                       style={{
-                        marginTop: `${marginTop}`,
-                        transition: '0.2 ease-in-out',
-                       }}
+                        style={{
+                            marginTop: `${marginTop}`,
+                            transition: '0.2 ease-in-out',
+                        }}
                         src={Ball}
                         width={150}
                         alt='ball'
                     />
-                    
+
                 </div>
             </div>
-                <h4>Points : {points}</h4>
+            <h4>Points : {points}</h4>
+            <h4>Background Color : {backgroundColor}</h4>
         </>
     )
 }
