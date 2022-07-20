@@ -96,16 +96,16 @@ const UseState = () => {
             
             
             if (verification2) {
-             return   
+            const points = pointsAdded
+            setPoints(points)
+             return  points
             }
-            setPoints(addPoints)
+            setPoints(pointsAdded)
             
 
-
-
-            //setPoints(points)
-            //console.log('sum log:', sum)
-
+            if (verification3) {
+                return pointsAdded
+            }
             return points
         } 
 
@@ -114,7 +114,7 @@ const UseState = () => {
 
 
     console.log('Points log:', points)
-    console.log('Regular points log:', regularPoints(points))
+    console.log('Regular points log:', regularPoints())
     console.log('Change background-color log:', backgroundColor,)
 
     return (
@@ -123,7 +123,7 @@ const UseState = () => {
             <button onClick={() => setCounter(increment())}>Increment</button>
             <button onClick={() => setCounter(decrement())}>Decrement</button>
             <div
-                onChange={() => regularPoints(setPoints(points))}
+                //onChange={() => regularPoints(setPoints(points))}
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
