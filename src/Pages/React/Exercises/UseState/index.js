@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Ball from '../../../../assets/svg/ball-svgrepo-com.svg'
 //import AnimatedBall from '../../../../assets/svg/animated_ball.svg'
 
@@ -7,6 +7,14 @@ const UseState = () => {
     const [backgroundColor, setBackgroundColor] = useState('#ffeb33')
     const [marginTop, setMarginTop] = useState('298px')
     const [points, setPoints] = useState(0)
+
+    useEffect(() => {
+        regularPoints()
+    }, [backgroundColor])
+    useEffect(() => {
+        setPoints(0)
+    }, [])
+
 
     console.log('Background log:', backgroundColor)
     console.log('Margin log', marginTop,)
@@ -25,7 +33,6 @@ const UseState = () => {
             alert('You dropped the ball 🏀 ! Same Background color', backgroundColor)
         } if (backgroundColor !== '#ffeb33') {
             setBackgroundColor('#ffeb33')
-
         }
 
         return backgroundColor
@@ -81,40 +88,42 @@ const UseState = () => {
         return marginTop
     }
 
+    
     const regularPoints = () => {
+
         if (backgroundColor === '#ff3333') {
             var addPoints = points + 2
             var pointsAdded = addPoints
             var verification2 = points !== 0
             var verification3 = points !== pointsAdded
 
+
             console.log('pointsAdded log:', pointsAdded,)
             console.log('addPoints log:', addPoints,)
             console.log('points log:', points)
 
             console.log('verifications 2 & 3 log:', verification2, '&', verification3,)
-            
-            
+
+
             if (verification2) {
-            const points = pointsAdded
-            setPoints(points)
-             return  points
+                const points = pointsAdded
+                setPoints(points)
+                return points
             }
-            setPoints(pointsAdded)
-            
+            setPoints(addPoints)
+
 
             if (verification3) {
                 return pointsAdded
             }
             return points
-        } 
-
+        }
     }
 
-
+    
 
     console.log('Points log:', points)
-    console.log('Regular points log:', regularPoints())
+    console.log('Regular points log:', ('regularPoints(),action()'))
     console.log('Change background-color log:', backgroundColor,)
 
     return (
@@ -123,7 +132,6 @@ const UseState = () => {
             <button onClick={() => setCounter(increment())}>Increment</button>
             <button onClick={() => setCounter(decrement())}>Decrement</button>
             <div
-                //onChange={() => regularPoints(setPoints(points))}
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
