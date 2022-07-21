@@ -6,8 +6,10 @@ const UseState = () => {
     const [backgroundColor, setBackgroundColor] = useState('#ffeb33')
     const [marginTop, setMarginTop] = useState('298px')
     const [points, setPoints] = useState(0)
+    const [array, setArray] = useState([])
 
     const combo1 = ['#ffeb33', '#3388ff', '#ff3333']
+    
 
     console.log('Background log:', backgroundColor)
     console.log('Margin log', marginTop,)
@@ -79,13 +81,13 @@ const UseState = () => {
         return marginTop
     }
 
-    const combos = () => {
+    const regularCombo1 = () => {
         for (var i = 0; i < combo1.length; i++) {
             console.log(i, combo1[i])
             return combo1[i]
         }
     }
-    combos()
+    regularCombo1()
 
     const regularPoints = () => {
 
@@ -118,18 +120,21 @@ const UseState = () => {
         }
     }
 
+// Iterating on Points
     useEffect(() => {
         regularPoints()
     }, [backgroundColor])
-    useEffect(() => {
-        let arr = []
-        arr.push(backgroundColor)
+
+//setting Array state for combo matching
+    useEffect(() => {       
+        array.push(backgroundColor)
+        setArray(array)        
         
-        console.log(arr.length, arr)
     }, [backgroundColor])
 
 
     console.log('Points log:', points)
+    console.log('Array log:',array.length, array)
     console.log('Change background-color log:', backgroundColor,)
 
     return (
