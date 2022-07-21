@@ -86,7 +86,8 @@ const UseState = () => {
             
             console.log(i, combo1[i])
         }
-        for (var i = 0; i < array.length; i++) {          
+        for (var i = 0; i < array.length; i++) {   
+               
             console.log(i, array[i],)
         }
         
@@ -97,22 +98,25 @@ const UseState = () => {
                     setArray([])
                     
 
-                    console.log('combo', )
+                    console.log('combo1', )
                 }
             }
 
         } else {
-            if (array[0] !== combo1[0]) {
-                if (array[1] !== combo1[1]) {
-                    if (array[2] !== combo1[2]) {
+            
+                if (array.forEach(index => index) === combo1.forEach(index => index)) {
+                    if (array.forEach(index => index) === combo1.forEach(index => index)) {
+                        array.forEach(index => (index))
+                        combo1.forEach(index => (index))
+                       
+                         
                         
-                        
-                        console.log('test')
+                        console.log('test', array, combo1)
                     }
                     
                 }
                 
-            }
+            
         }
 
         return combo1[i] = array[i]
@@ -163,11 +167,7 @@ const UseState = () => {
 
     }, [backgroundColor])
 
-    useEffect(() => {
-        if (combo1 === array) {
-            console.log('combo!')
-        }
-    }, [])
+   
 
 
     console.log('Points log:', points)
