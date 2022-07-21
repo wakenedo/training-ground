@@ -11,7 +11,7 @@ const UseState = () => {
 
     console.log('Background log:', backgroundColor)
     console.log('Margin log', marginTop,)
-    
+
     const backgroundColorYellow = () => {
 
         if (backgroundColor === '#ffeb33') {
@@ -80,15 +80,15 @@ const UseState = () => {
     }
 
     const combos = () => {
-        for(var i = 0; i <combo1.length ; i++) {
-            console.log(i, combo1)
+        for (var i = 0; i < combo1.length; i++) {
+            console.log(i, combo1[i])
             return combo1[i]
         }
     }
     combos()
-    
+
     const regularPoints = () => {
-        
+
         if (backgroundColor === '#ff3333') {
             var addPoints = points + 2
             var pointsAdded = addPoints
@@ -120,8 +120,14 @@ const UseState = () => {
 
     useEffect(() => {
         regularPoints()
-    }, [backgroundColor ])
-    
+    }, [backgroundColor])
+    useEffect(() => {
+        let arr = []
+        arr.push(backgroundColor)
+        
+        console.log(arr.length, arr)
+    }, [backgroundColor])
+
 
     console.log('Points log:', points)
     console.log('Change background-color log:', backgroundColor,)
@@ -141,7 +147,7 @@ const UseState = () => {
                 }}
             >
                 <h1>
-                    This is useState game exercise
+                    Drop the ball - beta
 
                 </h1>
 
@@ -168,7 +174,7 @@ const UseState = () => {
                 </div>
             </div>
             <h4>Points : {points}</h4>
-            {/*<h4>Background Color : {backgroundColor}</h4>*/}
+            <h4>Background Color : {backgroundColor}</h4>
         </>
     )
 }
