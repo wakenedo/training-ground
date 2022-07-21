@@ -1,36 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import Ball from '../../../../assets/svg/ball-svgrepo-com.svg'
-//import AnimatedBall from '../../../../assets/svg/animated_ball.svg'
+
 
 const UseState = () => {
-    const [counter, setCounter] = useState(0)
     const [backgroundColor, setBackgroundColor] = useState('#ffeb33')
     const [marginTop, setMarginTop] = useState('298px')
     const [points, setPoints] = useState(0)
 
-    useEffect(() => {
-        regularPoints()
-    }, [backgroundColor])
-    useEffect(() => {
-        setPoints(0)
-    }, [])
-
+    const combo1 = ['#ffeb33', '#3388ff', '#ff3333']
 
     console.log('Background log:', backgroundColor)
     console.log('Margin log', marginTop,)
-    const increment = () => {
-        return counter + 1
-    }
-    const decrement = () => {
-        if (counter === 0) {
-            return 0
-        }
-        return counter - 1
-    }
+    
     const backgroundColorYellow = () => {
 
         if (backgroundColor === '#ffeb33') {
-            alert('You dropped the ball 🏀 ! Same Background color', backgroundColor)
+            alert('You dropped the ball 🏀 !', backgroundColor)
+            setPoints(0)
+            return points
         } if (backgroundColor !== '#ffeb33') {
             setBackgroundColor('#ffeb33')
         }
@@ -40,7 +27,9 @@ const UseState = () => {
     const backgroundColorBlue = () => {
 
         if (backgroundColor === '#3388ff') {
-            alert('You dropped the ball 🏀 ! Same Background color', backgroundColor,)
+            alert('You dropped the ball 🏀 !', backgroundColor,)
+            setPoints(0)
+            return points
         } if (backgroundColor !== '#3388ff') {
             setBackgroundColor('#3388ff')
 
@@ -51,7 +40,9 @@ const UseState = () => {
     const backgroundColorRed = () => {
 
         if (backgroundColor === '#ff3333') {
-            alert(' You dropped the ball 🏀 ! Same Background color', backgroundColor)
+            alert(' You dropped the ball 🏀 !', backgroundColor)
+            setPoints(0)
+            return points
         } if (backgroundColor !== '#ff3333') {
             setBackgroundColor('#ff3333')
 
@@ -88,9 +79,16 @@ const UseState = () => {
         return marginTop
     }
 
+    const combos = () => {
+        for(var i = 0; i <combo1.length ; i++) {
+            console.log(i, combo1)
+            return combo1[i]
+        }
+    }
+    combos()
     
     const regularPoints = () => {
-
+        
         if (backgroundColor === '#ff3333') {
             var addPoints = points + 2
             var pointsAdded = addPoints
@@ -120,17 +118,16 @@ const UseState = () => {
         }
     }
 
+    useEffect(() => {
+        regularPoints()
+    }, [backgroundColor ])
     
 
     console.log('Points log:', points)
-    console.log('Regular points log:', ('regularPoints(),action()'))
     console.log('Change background-color log:', backgroundColor,)
 
     return (
         <>
-            <div>This is React Increment and Decrement counter: {counter} Exercise</div>
-            <button onClick={() => setCounter(increment())}>Increment</button>
-            <button onClick={() => setCounter(decrement())}>Decrement</button>
             <div
                 style={{
                     display: 'flex',
@@ -171,7 +168,7 @@ const UseState = () => {
                 </div>
             </div>
             <h4>Points : {points}</h4>
-            <h4>Background Color : {backgroundColor}</h4>
+            {/*<h4>Background Color : {backgroundColor}</h4>*/}
         </>
     )
 }

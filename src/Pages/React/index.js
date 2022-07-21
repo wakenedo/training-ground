@@ -1,4 +1,5 @@
 import React from 'react'
+import Counter from './Exercises/Counter'
 import UseState from './Exercises/UseState'
 
 const ReactJS = () => {
@@ -9,6 +10,7 @@ const ReactJS = () => {
           React
         </a>
       </h1>
+      <Counter />
       <UseState />
     </div>
   )
