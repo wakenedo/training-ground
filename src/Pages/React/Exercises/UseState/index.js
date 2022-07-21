@@ -9,7 +9,7 @@ const UseState = () => {
     const [array, setArray] = useState([])
 
     const combo1 = ['#ffeb33', '#3388ff', '#ff3333']
-    
+
 
     console.log('Background log:', backgroundColor)
     console.log('Margin log', marginTop,)
@@ -83,9 +83,40 @@ const UseState = () => {
 
     const regularCombo1 = () => {
         for (var i = 0; i < combo1.length; i++) {
+            
             console.log(i, combo1[i])
-            return combo1[i]
         }
+        for (var i = 0; i < array.length; i++) {          
+            console.log(i, array[i],)
+        }
+        
+        
+        if (array[0] === combo1[0]) {
+            if (array[1] === combo1[1]) {
+                if (array[2] === combo1[2]) {
+                    setArray([])
+                    
+
+                    console.log('combo', )
+                }
+            }
+
+        } else {
+            if (array[0] !== combo1[0]) {
+                if (array[1] !== combo1[1]) {
+                    if (array[2] !== combo1[2]) {
+                        
+                        
+                        console.log('test')
+                    }
+                    
+                }
+                
+            }
+        }
+
+        return combo1[i] = array[i]
+
     }
     regularCombo1()
 
@@ -120,21 +151,27 @@ const UseState = () => {
         }
     }
 
-// Iterating on Points
+    // Iterating on Points
     useEffect(() => {
         regularPoints()
     }, [backgroundColor])
 
-//setting Array state for combo matching
-    useEffect(() => {       
+    //setting Array state for combo matching
+    useEffect(() => {
         array.push(backgroundColor)
-        setArray(array)        
-        
+        setArray(array)
+
     }, [backgroundColor])
+
+    useEffect(() => {
+        if (combo1 === array) {
+            console.log('combo!')
+        }
+    }, [])
 
 
     console.log('Points log:', points)
-    console.log('Array log:',array.length, array)
+    console.log('Array log:', array.length, array)
     console.log('Change background-color log:', backgroundColor,)
 
     return (
