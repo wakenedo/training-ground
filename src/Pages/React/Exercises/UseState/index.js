@@ -14,8 +14,10 @@ const UseState = () => {
 
     const regularCombo1 = [yellow, blue, red]
     const regularCombo2 = [red, blue, yellow]
-    const weakCombo1 = [blue, yellow, red]
-    const weakCombo2 = [blue, red, yellow]
+    const weirdCombo1 = [blue, yellow, red]
+    const weirdCombo2 = [blue, red, yellow]
+    const weakCombo1 = [red, yellow, blue]
+    const weakCombo2 = [yellow, red, blue]
     const weakestCombo1 = [blue, red, blue]
     const weakestCombo2 = [yellow, blue, yellow]
     const whackCombo1 = [red, blue, red]
@@ -113,16 +115,19 @@ const UseState = () => {
         if (array[0] === _superWhack1[0]) {
             if (array[1] === _superWhack1[1]) {
                 if (array[2] === _superWhack1[2]) {
-                    if(array[3] === _superWhack1[3]) {
-                        setArray([])
+                    if (array[3] === _superWhack1[3]) {
+                        if (points <= 0) {
+                            setArray([])
+                            setPoints(0)
+                        }
                         console.log('_superWhack1',)
 
                     }
+                    return true
                 }
-                return true
             }
         }
-        
+
 
         console.log('super whack test', array, _superWhack1)
         return false
@@ -239,6 +244,43 @@ const UseState = () => {
     }
     weakCombo()
 
+    const weirdCombo = () => {
+        for (var i = 0; i < weirdCombo1.length; i++) {
+
+            // console.log(i, weirdCombo1[i])
+        }
+        for (var i = 0; i < array.length; i++) {
+
+            // console.log(i, array[i],)
+        }
+
+        if (array[0] === weirdCombo1[0]) {
+            if (array[1] === weirdCombo1[1]) {
+                if (array[2] === weirdCombo1[2]) {
+                    setArray([])
+                    console.log('weirdCombo1')
+                }
+                return true
+            }
+        }
+        if (array[0] === weirdCombo2[0]) {
+            if (array[1] === weirdCombo2[1]) {
+                if (array[2] === weirdCombo2[2]) {
+                    setArray([])
+
+                    console.log('weirdCombo2',)
+                }
+                return true
+            }
+
+        }
+
+
+        console.log('regular test', array, weirdCombo1)
+        return false
+
+    }
+    weirdCombo()
     const regularCombo = () => {
         for (var i = 0; i < regularCombo1.length; i++) {
 
@@ -276,7 +318,6 @@ const UseState = () => {
 
     }
     regularCombo()
-
     const superCombo = () => {
         for (var i = 0; i < _superCombo1.length; i++) {
 
@@ -307,10 +348,12 @@ const UseState = () => {
     }
     superCombo()
 
+
+
     const superWhackPoints = () => {
 
         if (superWhackCombo(true)) {
-            var addPoints = points -4
+            var addPoints = points - 4
             var pointsAdded = addPoints
             var verification2 = points !== 0
             var verification3 = points !== pointsAdded
@@ -325,6 +368,9 @@ const UseState = () => {
 
             if (verification2) {
                 const points = pointsAdded
+                if (points < 0) {
+                    setPoints(0)
+                }
                 setPoints(points)
                 return points
             }
@@ -427,6 +473,36 @@ const UseState = () => {
             return points
         }
     }
+    const weirdPoints = () => {
+
+        if (weirdCombo(true)) {
+            var addPoints = points + 2
+            var pointsAdded = addPoints
+            var verification2 = points !== 0
+            var verification3 = points !== pointsAdded
+
+
+            console.log('pointsAdded log:', pointsAdded,)
+            console.log('addPoints log:', addPoints,)
+            console.log('points log:', points)
+
+            console.log('verifications 2 & 3 log:', verification2, '&', verification3,)
+
+
+            if (verification2) {
+                const points = pointsAdded
+                setPoints(points)
+                return points
+            }
+            setPoints(addPoints)
+
+
+            if (verification3) {
+                return pointsAdded
+            }
+            return points
+        }
+    }
     const regularPoints = () => {
 
         if (regularCombo(true)) {
@@ -489,11 +565,6 @@ const UseState = () => {
     }
 
 
-
-    // Iterating on superWhack Points
-    useEffect(() => {
-        superWhackPoints()
-    }, [backgroundColor])
     // Iterating on Whack Points
     useEffect(() => {
         whackPoints()
@@ -506,6 +577,10 @@ const UseState = () => {
     useEffect(() => {
         weakestPoints()
     }, [backgroundColor])
+    // Iterating on Weird Points
+    useEffect(() => {
+        weirdPoints()
+    }, [backgroundColor])
     // Iterating on Regular Points
     useEffect(() => {
         regularPoints()
@@ -514,7 +589,10 @@ const UseState = () => {
     useEffect(() => {
         superPoints()
     }, [backgroundColor])
-
+    // Iterating on superWhack Points
+    useEffect(() => {
+        superWhackPoints()
+    }, [backgroundColor])
 
 
     //setting Array state for combo matching
@@ -523,9 +601,6 @@ const UseState = () => {
         setArray(array)
 
     }, [backgroundColor])
-
-
-
 
     console.log('Points log:', points)
     console.log('Array log:', array.length, array)
