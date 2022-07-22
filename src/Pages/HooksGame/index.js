@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Ball from '../../../../assets/svg/ball-svgrepo-com.svg'
+import Ball from '../../assets/svg/ball-svgrepo-com.svg'
 
-
-const UseState = () => {
+const HooksGame = () => {
     const [backgroundColor, setBackgroundColor] = useState('#ffeb33')
     const [marginTop, setMarginTop] = useState('298px')
     const [points, setPoints] = useState(0)
@@ -209,7 +208,6 @@ const UseState = () => {
 
     }
     weakestCombo()
-
     const weakCombo = () => {
         for (var i = 0; i < weakCombo1.length; i++) {
 
@@ -350,7 +348,6 @@ const UseState = () => {
 
     }
     superCombo()
-
 
     const superWhackPoints = () => {
 
@@ -661,7 +658,7 @@ const UseState = () => {
                 </div>
             </div>
             <h4>Points : {points}</h4>
-            <h4>Background Color : {backgroundColor}</h4>
+            <h6>Background Color : {backgroundColor}</h6>
             
             
             <div
@@ -678,7 +675,7 @@ const UseState = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     width: '200px',
-                    height: '300px',
+                    height: '250px',
                     maxHeight: 'fit-content',
                     backgroundColor: '#414141',
                     marginLeft: 'auto',
@@ -687,7 +684,7 @@ const UseState = () => {
 
 
                 }}>
-                <h4
+                <h6
                     style={{
                         display: 'flex',
                         flexDirection: 'column',
@@ -699,7 +696,7 @@ const UseState = () => {
                         {pointsLog(points)}
                     </p>
 
-                </h4>
+                </h6>
 
             </div>
             <div
@@ -707,7 +704,7 @@ const UseState = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     width: '200px',
-                    height: '300px',
+                    height: '250px',
                     maxHeight: 'fit-content',
                     backgroundColor: '#B2B2B2',
                     marginRight: 'auto',
@@ -716,7 +713,7 @@ const UseState = () => {
 
 
                 }}>
-                <h4
+                <h6
                     style={{
                         display: 'flex',
                         flexDirection: 'column',
@@ -728,7 +725,7 @@ const UseState = () => {
                         {pointsLog(points)}
                     </p>
 
-                </h4>
+                </h6>
 
             </div>
             </div>
@@ -736,4 +733,4 @@ const UseState = () => {
     )
 }
 
-export default UseState
+export default HooksGame
