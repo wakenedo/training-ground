@@ -16,9 +16,12 @@ const UseState = () => {
     const regularCombo2 = [red, blue, yellow]
     const weakCombo1 = [blue, yellow, red]
     const weakCombo2 = [blue, red, yellow]
-    const weakCombo3 = [blue, red, blue]
-    const weakCombo4 = [blue, yellow, yellow]
-    const _superCombo = [blue, yellow, blue, red]
+    const weakestCombo1 = [blue, red, blue]
+    const weakestCombo2 = [yellow, blue, yellow]
+    const whackCombo1 = [red, blue, red]
+    const whackCombo2 = [red, yellow, red]
+    const _superCombo1 = [blue, yellow, blue, red]
+    const _superWhack1 = [blue, yellow, blue, yellow]
 
 
     console.log('Background log:', backgroundColor)
@@ -94,10 +97,12 @@ const UseState = () => {
         return marginTop
     }
 
-    {/*const superCombo = () => {
-        for (var i = 0; i < _superCombo.length; i++) {
 
-            // console.log(i, _superCombo[i])
+
+    const superWhackCombo = () => {
+        for (var i = 0; i < _superWhack1.length; i++) {
+
+            // console.log(i, _superWhack1[i])
         }
         for (var i = 0; i < array.length; i++) {
 
@@ -105,22 +110,134 @@ const UseState = () => {
         }
 
 
-        if (array[0] === _superCombo[0]) {
-            if (array[1] === _superCombo[1]) {
-                if (array[2] === _superCombo[2]) {
-                    setArray([])
+        if (array[0] === _superWhack1[0]) {
+            if (array[1] === _superWhack1[1]) {
+                if (array[2] === _superWhack1[2]) {
+                    if(array[3] === _superWhack1[3]) {
+                        setArray([])
+                        console.log('_superWhack1',)
 
-
-                    console.log('_superCombo',)
+                    }
                 }
+                return true
             }
         }
+        
 
-        console.log('test', array, _superCombo)
-        return _superCombo[i] = array[i]
+        console.log('super whack test', array, _superWhack1)
+        return false
 
     }
-superCombo()*/}
+    superWhackCombo()
+    const whackCombo = () => {
+        for (var i = 0; i < whackCombo1.length; i++) {
+
+            // console.log(i, whackCombo1[i])
+        }
+        for (var i = 0; i < array.length; i++) {
+
+            // console.log(i, array[i],)
+        }
+
+
+        if (array[0] === whackCombo1[0]) {
+            if (array[1] === whackCombo1[1]) {
+                if (array[2] === whackCombo1[2]) {
+                    setArray([])
+                    console.log('whackCombo1',)
+                }
+                return true
+            }
+        }
+        if (array[0] === whackCombo2[0]) {
+            if (array[1] === whackCombo2[1]) {
+                if (array[2] === whackCombo2[2]) {
+                    setArray([])
+                    console.log('whackCombo2',)
+                }
+                return true
+            }
+
+        }
+
+        console.log('whack test', array, whackCombo1)
+        return false
+
+    }
+    whackCombo()
+    const weakestCombo = () => {
+        for (var i = 0; i < weakestCombo1.length; i++) {
+
+            // console.log(i, weakestCombo1[i])
+        }
+        for (var i = 0; i < array.length; i++) {
+
+            // console.log(i, array[i],)
+        }
+
+
+        if (array[0] === weakestCombo1[0]) {
+            if (array[1] === weakestCombo1[1]) {
+                if (array[2] === weakestCombo1[2]) {
+                    setArray([])
+                    console.log('weakestCombo1',)
+                }
+                return true
+            }
+        }
+        if (array[0] === weakestCombo2[0]) {
+            if (array[1] === weakestCombo2[1]) {
+                if (array[2] === weakestCombo2[2]) {
+                    setArray([])
+                    console.log('weakestCombo2',)
+                }
+                return true
+            }
+
+        }
+
+        console.log('weak test', array, weakestCombo1)
+        return false
+
+    }
+    weakestCombo()
+
+    const weakCombo = () => {
+        for (var i = 0; i < weakCombo1.length; i++) {
+
+            // console.log(i, weakCombo1[i])
+        }
+        for (var i = 0; i < array.length; i++) {
+
+            // console.log(i, array[i],)
+        }
+
+
+        if (array[0] === weakCombo1[0]) {
+            if (array[1] === weakCombo1[1]) {
+                if (array[2] === weakCombo1[2]) {
+                    setArray([])
+                    console.log('weakCombo1',)
+                }
+                return true
+            }
+        }
+        if (array[0] === weakCombo2[0]) {
+            if (array[1] === weakCombo2[1]) {
+                if (array[2] === weakCombo2[2]) {
+                    setArray([])
+                    console.log('weakCombo2',)
+                }
+                return true
+            }
+
+        }
+
+        console.log('weak test', array, weakCombo1)
+        return false
+
+    }
+    weakCombo()
 
     const regularCombo = () => {
         for (var i = 0; i < regularCombo1.length; i++) {
@@ -154,16 +271,16 @@ superCombo()*/}
         }
 
 
-        console.log('test', array, regularCombo1)
+        console.log('regular test', array, regularCombo1)
         return false
 
     }
     regularCombo()
 
-    const weakCombo = () => {
-        for (var i = 0; i < weakCombo1.length; i++) {
+    const superCombo = () => {
+        for (var i = 0; i < _superCombo1.length; i++) {
 
-            // console.log(i, weakCombo1[i])
+            // console.log(i, _superCombo[i])
         }
         for (var i = 0; i < array.length; i++) {
 
@@ -171,61 +288,89 @@ superCombo()*/}
         }
 
 
-        if (array[0] === weakCombo1[0]) {
-            if (array[1] === weakCombo1[1]) {
-                if (array[2] === weakCombo1[2]) {
-                    setArray([])
+        if (array[0] === _superCombo1[0]) {
+            if (array[1] === _superCombo1[1]) {
+                if (array[2] === _superCombo1[2]) {
+                    if (array[3] === _superCombo1[3]) {
+                        setArray([])
+                        console.log('_superCombo',)
 
-
-                    console.log('weakCombo1',)
+                    }
+                    return true
                 }
             }
         }
-        if (array[0] === weakCombo2[0]) {
-            if (array[1] === weakCombo2[1]) {
-                if (array[2] === weakCombo2[2]) {
-                    setArray([])
 
-
-                    console.log('weakCombo2',)
-                }
-            }
-
-        }
-        if (array[0] === weakCombo3[0]) {
-            if (array[1] === weakCombo3[1]) {
-                if (array[2] === weakCombo3[2]) {
-                    setArray([])
-
-
-                    console.log('weakCombo3',)
-                }
-            }
-
-        }
-        if (array[0] === weakCombo4[0]) {
-            if (array[1] === weakCombo4[1]) {
-                if (array[2] === weakCombo4[2]) {
-                    setArray([])
-
-
-                    console.log('weakCombo4',)
-                }
-            }
-
-        }
-
-
-        console.log('test', array, weakCombo1)
-        return weakCombo1[i] = array[i]
+        console.log(' super combo test', array, _superCombo1)
+        return false
 
     }
-    weakCombo()
+    superCombo()
 
-    const regularPoints = () => {
+    const superWhackPoints = () => {
 
-        if (regularCombo(true)) {
-            var addPoints = points + 2
+        if (superWhackCombo(true)) {
+            var addPoints = points -4
+            var pointsAdded = addPoints
+            var verification2 = points !== 0
+            var verification3 = points !== pointsAdded
+
+
+            console.log('pointsAdded log:', pointsAdded,)
+            console.log('addPoints log:', addPoints,)
+            console.log('points log:', points)
+
+            console.log('verifications 2 & 3 log:', verification2, '&', verification3,)
+
+
+            if (verification2) {
+                const points = pointsAdded
+                setPoints(points)
+                return points
+            }
+            setPoints(addPoints)
+
+
+            if (verification3) {
+                return pointsAdded
+            }
+            return points
+        }
+    }
+    const whackPoints = () => {
+
+        if (whackCombo(true)) {
+            var addPoints = points + 0
+            var pointsAdded = addPoints
+            var verification2 = points !== 0
+            var verification3 = points !== pointsAdded
+
+
+            console.log('pointsAdded log:', pointsAdded,)
+            console.log('addPoints log:', addPoints,)
+            console.log('points log:', points)
+
+            console.log('verifications 2 & 3 log:', verification2, '&', verification3,)
+
+
+            if (verification2) {
+                const points = pointsAdded
+                setPoints(points)
+                return points
+            }
+            setPoints(addPoints)
+
+
+            if (verification3) {
+                return pointsAdded
+            }
+            return points
+        }
+    }
+    const weakestPoints = () => {
+
+        if (weakestCombo(true)) {
+            var addPoints = points + 1
             var pointsAdded = addPoints
             var verification2 = points !== 0
             var verification3 = points !== pointsAdded
@@ -255,7 +400,67 @@ superCombo()*/}
     const weakPoints = () => {
 
         if (weakCombo(true)) {
-            var addPoints = points + 1
+            var addPoints = points + 2
+            var pointsAdded = addPoints
+            var verification2 = points !== 0
+            var verification3 = points !== pointsAdded
+
+
+            console.log('pointsAdded log:', pointsAdded,)
+            console.log('addPoints log:', addPoints,)
+            console.log('points log:', points)
+
+            console.log('verifications 2 & 3 log:', verification2, '&', verification3,)
+
+
+            if (verification2) {
+                const points = pointsAdded
+                setPoints(points)
+                return points
+            }
+            setPoints(addPoints)
+
+
+            if (verification3) {
+                return pointsAdded
+            }
+            return points
+        }
+    }
+    const regularPoints = () => {
+
+        if (regularCombo(true)) {
+            var addPoints = points + 3
+            var pointsAdded = addPoints
+            var verification2 = points !== 0
+            var verification3 = points !== pointsAdded
+
+
+            console.log('pointsAdded log:', pointsAdded,)
+            console.log('addPoints log:', addPoints,)
+            console.log('points log:', points)
+
+            console.log('verifications 2 & 3 log:', verification2, '&', verification3,)
+
+
+            if (verification2) {
+                const points = pointsAdded
+                setPoints(points)
+                return points
+            }
+            setPoints(addPoints)
+
+
+            if (verification3) {
+                return pointsAdded
+            }
+            return points
+        }
+    }
+    const superPoints = () => {
+
+        if (superCombo(true)) {
+            var addPoints = points + 6
             var pointsAdded = addPoints
             var verification2 = points !== 0
             var verification3 = points !== pointsAdded
@@ -283,12 +488,34 @@ superCombo()*/}
         }
     }
 
-    // Iterating on Points
+
+
+    // Iterating on superWhack Points
     useEffect(() => {
-        regularPoints() 
-        weakPoints()
-        
+        superWhackPoints()
     }, [backgroundColor])
+    // Iterating on Whack Points
+    useEffect(() => {
+        whackPoints()
+    }, [backgroundColor])
+    // Iterating on Weak Points
+    useEffect(() => {
+        weakPoints()
+    }, [backgroundColor])
+    // Iterating on Weakest Points
+    useEffect(() => {
+        weakestPoints()
+    }, [backgroundColor])
+    // Iterating on Regular Points
+    useEffect(() => {
+        regularPoints()
+    }, [backgroundColor])
+    // Iterating on Super Points
+    useEffect(() => {
+        superPoints()
+    }, [backgroundColor])
+
+
 
     //setting Array state for combo matching
     useEffect(() => {
