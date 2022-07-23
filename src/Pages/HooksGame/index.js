@@ -6,6 +6,7 @@ const HooksGame = () => {
     const [marginTop, setMarginTop] = useState('298px')
     const [points, setPoints] = useState(0)
     const [array, setArray] = useState([])
+    const [arrayOfPointsLog, setArrayOfPointsLog] = useState([])
 
     const blue = '#3388ff'
     const red = '#ff3333'
@@ -564,11 +565,19 @@ const HooksGame = () => {
     }
 
     const pointsLog = () => {
+        let arr = arrayOfPointsLog
         for (let i = 0; i <= points; i++) {
-            if (i === points) {
+            if (i !== points) {
                 return points
             }
-            return points
+            
+            arr.map((point) => {
+                return point
+            })
+            arr.push(points.toString())
+
+
+            return arr
         }
 
     }
@@ -693,7 +702,7 @@ const HooksGame = () => {
                     Combo Logs:
                     
                     <p>
-                        {pointsLog(points)}
+                        {pointsLog()}
                     </p>
 
                 </h6>
@@ -722,7 +731,7 @@ const HooksGame = () => {
                     Points Log:
                     
                     <p>
-                        {pointsLog(points)}
+                        {pointsLog()}
                     </p>
 
                 </h6>
