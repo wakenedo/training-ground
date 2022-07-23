@@ -576,10 +576,9 @@ const HooksGame = () => {
             })
             arr.push(points.toString())
 
-
-            return arr
+            
+            return arr[i]
         }
-
     }
     pointsLog()
 
