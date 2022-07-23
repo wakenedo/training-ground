@@ -1,15 +1,14 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const JavaScript = () => {
-  const navigate = useNavigate();
+
 
   return (
-
-    <button 
-    onClick={() => navigate('/JavaScript')}
-    >JavaScript</button>
+    <Link to='./JavaScript'>
+      <button>JavaScript</button>
+    </Link>
 
   )
 }
