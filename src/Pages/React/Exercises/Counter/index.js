@@ -12,11 +12,22 @@ const Counter = () => {
         return counter - 1
     }
     return (
-        <>
-            <div>This is React Increment and Decrement counter: {counter} Exercise</div>
+        <div
+            style={{
+                marginBottom: '35px'
+            }}
+        >
+            <div>
+                <h2>
+                    This is React Increment and Decrement Exercises
+                </h2>
+                <p>
+                    counter: <strong>{counter}</strong>
+                </p>
+            </div>
             <button onClick={() => setCounter(increment())}>Increment</button>
             <button onClick={() => setCounter(decrement())}>Decrement</button>
-        </>
+        </div>
     )
 }
 

@@ -5,8 +5,8 @@ import App from './App';
 
 import { BrowserRouter } from 'react-router-dom';
 
-import ButtonJavaScript from './components/ButtonJavaScript'
-import ButtonReact from './components/ButtonReact'
+
+import Footer from './components/Footer';
 
 
 
@@ -17,8 +17,7 @@ root.render(
   <>
     <BrowserRouter>
       <App />
-      <ButtonJavaScript />
-      <ButtonReact />
+      <Footer />
     </BrowserRouter>
 
   </>

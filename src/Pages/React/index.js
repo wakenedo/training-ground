@@ -1,17 +1,22 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
+
+import Header from '../../components/Header'
 import Counter from './Exercises/Counter'
-import UseState from './Exercises/UseState'
+import HooksGame from './Exercises/HooksGame'
+
+
+
+
 
 const ReactJS = () => {
+  const location = useLocation()
+
   return (
     <div>
-      <h1>
-        <a href='/'>
-          React
-        </a>
-      </h1>
+      <Header location={location.pathname} />
       <Counter />
-      <UseState />
+      <HooksGame />
     </div>
   )
 }

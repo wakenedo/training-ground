@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Ball from '../../../../assets/svg/ball-svgrepo-com.svg'
 
-
-const UseState = () => {
+const HooksGame = () => {
     const [backgroundColor, setBackgroundColor] = useState('#ffeb33')
     const [marginTop, setMarginTop] = useState('298px')
     const [points, setPoints] = useState(0)
     const [array, setArray] = useState([])
+
 
     const blue = '#3388ff'
     const red = '#ff3333'
@@ -101,13 +101,13 @@ const UseState = () => {
 
 
     const superWhackCombo = () => {
-        for (var i = 0; i < _superWhack1.length; i++) {
+        for (var x = 0; x < _superWhack1.length; x++) {
 
-            // console.log(i, _superWhack1[i])
+            // console.log(x, _superWhack1[x])
         }
-        for (var i = 0; i < array.length; i++) {
+        for (var x1 = 0; x1 < array.length; x1++) {
 
-            // console.log(i, array[i],)
+            // console.log(x1, array[x1],)
         }
 
 
@@ -121,14 +121,14 @@ const UseState = () => {
                             console.log('_superWhack1',)
                         }
                         return true
-                         
-                        
+
+
                     }
-                     
+
                 }
-                
+
             }
-            
+
         }
 
 
@@ -138,13 +138,13 @@ const UseState = () => {
     }
     superWhackCombo()
     const whackCombo = () => {
-        for (var i = 0; i < whackCombo1.length; i++) {
+        for (var y = 0; y < whackCombo1.length; y++) {
 
-            // console.log(i, whackCombo1[i])
+            // console.log(y, whackCombo1[y])
         }
-        for (var i = 0; i < array.length; i++) {
+        for (var y1 = 0; y1 < array.length; y1++) {
 
-            // console.log(i, array[i],)
+            // console.log(y1, array[y1],)
         }
 
 
@@ -174,13 +174,13 @@ const UseState = () => {
     }
     whackCombo()
     const weakestCombo = () => {
-        for (var i = 0; i < weakestCombo1.length; i++) {
+        for (var z = 0; z < weakestCombo1.length; z++) {
 
-            // console.log(i, weakestCombo1[i])
+            // console.log(z, weakestCombo1[z])
         }
-        for (var i = 0; i < array.length; i++) {
+        for (var z1 = 0; z1 < array.length; z1++) {
 
-            // console.log(i, array[i],)
+            // console.log(z1, array[z1],)
         }
 
 
@@ -209,15 +209,14 @@ const UseState = () => {
 
     }
     weakestCombo()
-
     const weakCombo = () => {
-        for (var i = 0; i < weakCombo1.length; i++) {
+        for (var f = 0; f < weakCombo1.length; f++) {
 
-            // console.log(i, weakCombo1[i])
+            // console.log(f, weakCombo1[f])
         }
-        for (var i = 0; i < array.length; i++) {
+        for (var f1 = 0; f1 < array.length; f1++) {
 
-            // console.log(i, array[i],)
+            // console.log(f1, array[f1],)
         }
 
 
@@ -248,13 +247,13 @@ const UseState = () => {
     weakCombo()
 
     const weirdCombo = () => {
-        for (var i = 0; i < weirdCombo1.length; i++) {
+        for (var u = 0; u < weirdCombo1.length; u++) {
 
-            // console.log(i, weirdCombo1[i])
+            // console.log(u, weirdCombo1[u])
         }
-        for (var i = 0; i < array.length; i++) {
+        for (var u1 = 0; u1 < array.length; u1++) {
 
-            // console.log(i, array[i],)
+            // console.log(u1, array[u1],)
         }
 
         if (array[0] === weirdCombo1[0]) {
@@ -285,13 +284,13 @@ const UseState = () => {
     }
     weirdCombo()
     const regularCombo = () => {
-        for (var i = 0; i < regularCombo1.length; i++) {
+        for (var d = 0; d < regularCombo1.length; d++) {
 
-            // console.log(i, regularCombo1[i])
+            // console.log(d, regularCombo1[d])
         }
-        for (var i = 0; i < array.length; i++) {
+        for (var d1 = 0; d1 < array.length; d1++) {
 
-            // console.log(i, array[i],)
+            // console.log(d1, array[d1],)
         }
 
         if (array[0] === regularCombo1[0]) {
@@ -322,13 +321,13 @@ const UseState = () => {
     }
     regularCombo()
     const superCombo = () => {
-        for (var i = 0; i < _superCombo1.length; i++) {
+        for (var j = 0; j < _superCombo1.length; j++) {
 
-            // console.log(i, _superCombo[i])
+            // console.log(j, _superCombo[j])
         }
-        for (var i = 0; i < array.length; i++) {
+        for (var j1 = 0; j1 < array.length; j1++) {
 
-            // console.log(i, array[i],)
+            // console.log(j1, array[j1],)
         }
 
 
@@ -350,7 +349,6 @@ const UseState = () => {
 
     }
     superCombo()
-
 
     const superWhackPoints = () => {
 
@@ -566,17 +564,6 @@ const UseState = () => {
         }
     }
 
-    const pointsLog = () => {
-        for (let i = 0; i <= points; i++) {
-            if (i === points) {
-                return points
-            }
-            return points
-        }
-
-    }
-    pointsLog()
-
     // Iterating on Whack Points
     useEffect(() => {
         whackPoints()
@@ -617,10 +604,14 @@ const UseState = () => {
     console.log('Points log:', points)
     console.log('Array log:', array.length, array)
     console.log('Change background-color log:', backgroundColor,)
-    console.log('pointsLog log:', pointsLog(),)
+
 
     return (
-        <>
+        <div>
+            <h2>
+                ReactJS - HooksGame Exercise
+            </h2>
+
             <div
                 style={{
                     display: 'flex',
@@ -634,8 +625,7 @@ const UseState = () => {
                 }}
             >
                 <h1>
-                    Drop the ball - beta
-
+                    🏀 Drop the Ball 🏀
                 </h1>
 
                 <button onClick={() => backgroundColorYellow(marginTopLow())}>Yellow!</button>
@@ -661,79 +651,22 @@ const UseState = () => {
                 </div>
             </div>
             <h4>Points : {points}</h4>
-            <h4>Background Color : {backgroundColor}</h4>
-            
-            
-            <div
-            style={{
-                display: 'flex',
-                
+            <h6>Background Color : {backgroundColor}</h6>
 
-            }}
+
+            <div
+                style={{
+                    display: 'flex',
+
+
+                }}
             >
 
-            
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    width: '200px',
-                    height: '300px',
-                    maxHeight: 'fit-content',
-                    backgroundColor: '#414141',
-                    marginLeft: 'auto',
-                    marginRight: '2px',
-                    borderRadius: '5px',
 
-
-                }}>
-                <h4
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                    }}
-                >
-                    Combo Logs:
-                    
-                    <p>
-                        {pointsLog(points)}
-                    </p>
-
-                </h4>
 
             </div>
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    width: '200px',
-                    height: '300px',
-                    maxHeight: 'fit-content',
-                    backgroundColor: '#B2B2B2',
-                    marginRight: 'auto',
-                    marginLeft: '2px',
-                    borderRadius: '5px',
-
-
-                }}>
-                <h4
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                    }}
-                >
-                    Points Log:
-                    
-                    <p>
-                        {pointsLog(points)}
-                    </p>
-
-                </h4>
-
-            </div>
-            </div>
-        </>
+        </div>
     )
 }
 
-export default UseState
+export default HooksGame
