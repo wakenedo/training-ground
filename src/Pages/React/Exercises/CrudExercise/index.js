@@ -19,7 +19,8 @@ const CrudExercises = () => {
   const addTask = () => {
     const task = {
       id: toDoList.length === 0 ? 1 : toDoList[toDoList.length - 1].id + 1,
-      taskName: newTask
+      taskName: newTask,
+      completed: false
     }
     setToDoList([...toDoList, task])
   }
@@ -28,7 +29,17 @@ const CrudExercises = () => {
     setToDoList(toDoList.filter((task) => task.id !== id))
   }
 
-  console.log(deleteTask)
+  const completeTask = (id) => {
+    setToDoList(
+      toDoList.map((task) => {
+        if (task.id === id) {
+          return { ...task, completed: true }
+        } else {
+          return task
+        }
+      })
+    )
+  }
 
   return (
     <div className='CrudApp'>
@@ -49,7 +60,10 @@ const CrudExercises = () => {
             <Task
               taskName={task.taskName}
               id={task.id}
-              deleteTask={deleteTask} />
+              completed={task.completed}
+              deleteTask={deleteTask}
+              completeTask={completeTask}
+            />
           )
         })}
       </div>
