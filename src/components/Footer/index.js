@@ -3,11 +3,14 @@ import ButtonJavaScript from '../ButtonJavaScript'
 import ButtonReact from '../ButtonReact'
 
 const Footer = () => {
+
+
   return (
     <div
       style={{
-        position: 'absolute',
+        position: 'sticky',
         bottom: '0',
+        zIndex: '999'
 
       }}
     >
