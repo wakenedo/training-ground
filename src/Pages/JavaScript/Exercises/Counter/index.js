@@ -1,31 +1,62 @@
-export function Counter() {
-    var initialValue = 1
-    var value = 0
+import { Link } from "react-router-dom"
 
-    const sum = () => {
-        let iterations = initialValue++
-        var b = iterations
-        
-       
+const html = '/src/Pages/JavaScript/Exercises/Counter/index.html'
 
-        console.log( iterations, b)
-        return b
-        
-    }
-   
-    
-
-
-
-    console.log('sum log:', sum())
-
+function Counter() {
 
     return (
+
         <>
-            <h1>This is counter exercise</h1>
-            <h1  >{sum()}</h1>
-            <button onClick={() => (sum())} >Addition</button>
-            <span></span>
+            <h1>JS Counter - Example</h1>
+            <Link
+                to={html}
+            >
+                <p>Open the working counter</p>
+            </Link>
+            <div
+                style={{
+                    maxWidth: '200px',
+                    margin: '0 auto',
+                    justifyContent: 'center',
+
+
+                }}
+
+            >
+                <div
+                    style={{
+                        justifyContent: 'space-between',
+                        display: 'flex',
+                        fontSize: '3rem'
+                    }}
+                >
+                    <div
+                        style={{
+                            backgroundColor: '#e6e6e6',
+                            border: '1px solid #808080',
+                            width: '60px'
+                        }}
+                    >
+                        -
+                    </div>
+                    <div>
+                        0
+                    </div>
+                    <div
+                        style={{
+                            backgroundColor: '#e6e6e6',
+                            border: '1px solid #808080',
+                            width: '60px'
+                        }}
+                    >
+                        +
+                    </div>
+
+                </div>
+            </div>
+
         </>
     )
 }
+
+export default Counter

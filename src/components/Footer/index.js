@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <div
       style={{
-        position: 'sticky',
+        position: 'absolute',
         bottom: '0',
-        height: 'fit-content',
+
       }}
     >
       <ButtonJavaScript />

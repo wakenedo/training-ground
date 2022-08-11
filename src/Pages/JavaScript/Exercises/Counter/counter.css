@@ -1,0 +1,33 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.col {
+  font-size: 3rem;
+  margin: 10px;
+  padding: 30px;
+}
+
+
+
+.colPlus {
+  padding: 20px;
+  font-size: 3rem;
+  background-color: #a5a5a5;
+  border: 1px solid #2d2c2c
+}
+
+.colMinus {
+  padding: 20px 25.55px 20px 25.55px;
+  font-size: 3rem;
+  background-color: #a5a5a5;
+  border: 1px solid #2d2c2c
+}

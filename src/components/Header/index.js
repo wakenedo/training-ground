@@ -28,7 +28,11 @@ const Header = ({ location }) => {
       <div style={{
         marginLeft: '39.25%'
       }}>
-        <h1>
+        <h1
+          style={{
+            cursor: 'default',
+          }}
+        >
           Training Grounds - {location ? location.substring(1) : location}
         </h1>
       </div>
