@@ -46,7 +46,6 @@ const Header = ({ location }) => {
       >
         <a
           href='/'
-
         >
           <img
             alt='return-home-button'
@@ -56,10 +55,8 @@ const Header = ({ location }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{
-
               transition: isHovering ? 'ease-in-out 0.3s ' : '',
               transform: isHovering ? 'scale(1.3)' : ''
-
             }}
           />
         </a>
