@@ -6,9 +6,6 @@ import Counter from './Exercises/Counter'
 import HooksGame from './Exercises/HooksGame'
 
 
-
-
-
 const ReactJS = () => {
   const location = useLocation()
 
