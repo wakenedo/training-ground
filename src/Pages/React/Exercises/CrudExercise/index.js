@@ -45,9 +45,16 @@ const CrudExercises = () => {
     <div className='CrudApp'>
       <h1> To-do List </h1>
 
-      <p>
+      <h4>
         Crud Exercises
-      </p>
+      </h4>
+      <span
+        style={{
+          marginBottom: '25px'
+        }}
+      >
+        Create, Update, Delete
+      </span>
 
 
       <div className='addTask'>
