@@ -1,6 +1,7 @@
 import React from 'react'
 import ButtonJavaScript from '../ButtonJavaScript'
 import ButtonReact from '../ButtonReact'
+import ButtonRedux from '../ButtonRedux'
 
 const Footer = () => {
 
@@ -16,6 +17,7 @@ const Footer = () => {
     >
       <ButtonJavaScript />
       <ButtonReact />
+      <ButtonRedux />
     </div>
   )
 }
