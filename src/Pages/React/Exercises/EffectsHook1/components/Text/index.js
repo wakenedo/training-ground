@@ -1,7 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Text = () => {
   const [text, setText] = useState('')
+
+  useEffect(() => {
+    alert('COMPONENT MOUNTED')
+
+    return () => {
+      alert('COMPONENT UNMOUNTED')
+    }
+  }, [])
 
 
   return (
