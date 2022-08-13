@@ -10,7 +10,7 @@ const EffectsHook1 = () => {
         Side Effects Exercise 1
       </h1>
       <h4>
-        useEffect Hook Introduction
+        Component Lifecycle - useEffect Hook Introduction
       </h4>
 
       <button onClick={() => {
