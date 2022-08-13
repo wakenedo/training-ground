@@ -16,7 +16,7 @@ const EffectsHook1 = () => {
       <button onClick={() => {
         setShowText(!showText)
       }}>
-        Show Text
+        Show Input
       </button>
       {showText && <Text />}
     </div>
