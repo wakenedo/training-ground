@@ -19,7 +19,7 @@ const EffectsHook2 = () => {
 
 
   return (
-    <div>
+    <div className='App-Effects2'>
       <h1>Side Effects Exercise 2</h1>
       <h4>Fetching data from Api</h4>
       <p>Using Cat Fact Api to generate a Cat fact on click</p>
