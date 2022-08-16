@@ -1,16 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Axios from 'axios'
 
-const EffectsHook5 = () => {
+
+const EffectsHook4 = () => {
+  const [generatedExcuse, setGeneratedExcuse] = useState('')
+
+  const fetchExcuse = (excuse) => {
+    Axios.get(`https://excuser.herokuapp.com/v1/excuse/${excuse}/`).then(
+      (response) => {
+        setGeneratedExcuse(response.data[0].excuse)
+      }
+    )
+  }
+
+
   return (
     <div>
       <h1>Generate an Excuse</h1>
       <h4>Using Excuser Api</h4>
 
-      <button>Party</button>
-      <button>Family</button>
-      <button>Office</button>
+      <button onClick={() => fetchExcuse('party')}>Generate Party Excuse</button>
+      <button onClick={() => fetchExcuse('family')}>GenerateFamily Excuse</button>
+      <button onCLick={() => fetchExcuse('office')}>Generate Office Excuse</button>
+      <h4>{generatedExcuse}</h4>
     </div>
   )
 }
 
-export default EffectsHook5
+export default EffectsHook4

@@ -10,6 +10,7 @@ import CrudExercises from './Exercises/CrudExercise'
 import EffectsHook1 from './Exercises/EffectsHook1'
 import EffectsHook2 from './Exercises/EffectsHook2'
 import EffectsHook3 from './Exercises/EffectsHook3'
+import EffectsHook4 from './Exercises/EffectsHook4'
 import HooksGame from './Exercises/HooksGame'
 
 
@@ -25,6 +26,7 @@ const ReactJS = () => {
       <EffectsHook1 />
       <EffectsHook2 />
       <EffectsHook3 />
+      <EffectsHook4 />
     </div>
   )
 }
