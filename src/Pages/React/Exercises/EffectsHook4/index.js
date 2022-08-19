@@ -6,6 +6,7 @@ const EffectsHook4 = () => {
   const [generatedExcuse, setGeneratedExcuse] = useState('')
 
   const fetchExcuse = (excuse) => {
+
     Axios.get(`https://excuser.herokuapp.com/v1/excuse/${excuse}/`).then(
       (response) => {
         setGeneratedExcuse(response.data[0].excuse)

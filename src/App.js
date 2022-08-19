@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <Routes >
-        <Route path='/JavaScript' element={<JavaScript />} />
+        {/*<Route path='/JavaScript' element={<JavaScript />} />*/}
         <Route path='/React' element={<ReactJS />} />
         <Route path='/Redux' element={<Redux />} />
         <Route path='/' element={<Home />} />

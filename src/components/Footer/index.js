@@ -15,7 +15,7 @@ const Footer = () => {
 
       }}
     >
-      <ButtonJavaScript />
+      {/*<ButtonJavaScript />*/}
       <ButtonReact />
       <ButtonRedux />
     </div>
