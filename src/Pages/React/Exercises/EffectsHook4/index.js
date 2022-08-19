@@ -22,7 +22,7 @@ const EffectsHook4 = () => {
 
       <button onClick={() => fetchExcuse('party')}>Generate Party Excuse</button>
       <button onClick={() => fetchExcuse('family')}>GenerateFamily Excuse</button>
-      <button onCLick={() => fetchExcuse('office')}>Generate Office Excuse</button>
+      <button onClick={() => fetchExcuse('office')}>Generate Office Excuse</button>
       <h4>{generatedExcuse}</h4>
     </div>
   )
