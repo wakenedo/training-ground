@@ -13,7 +13,7 @@ body {
 }
 
 .addTask {
-  height: 250px;
+  height: 150px;
   background-color: dodgerblue;
   width: 100%;
   display: flex;
