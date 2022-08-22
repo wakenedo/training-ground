@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonJavaScript from '../ButtonJavaScript'
+//import ButtonJavaScript from '../ButtonJavaScript'
 import ButtonReact from '../ButtonReact'
 import ButtonRedux from '../ButtonRedux'
 
