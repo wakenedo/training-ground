@@ -10,6 +10,7 @@ import SimpleCounter from './Exercises/SimpleCounter'
 //Simple Counter Exercise Imports
 import { Provider as SimpleCounterProvider } from 'react-redux'
 import SimpleCounterStore from '../Redux/Exercises/SimpleCounter/Store'
+import ReduxExercise1 from './Exercises/ReduxExercise1'
 
 const Redux = () => {
   const location = useLocation()
@@ -19,6 +20,7 @@ const Redux = () => {
       <SimpleCounterProvider store={SimpleCounterStore}>
         <SimpleCounter />
       </SimpleCounterProvider>
+      <ReduxExercise1 />
     </div>
   )
 }
