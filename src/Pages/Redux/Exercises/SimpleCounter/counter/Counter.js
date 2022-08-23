@@ -8,9 +8,7 @@ export function Counter() {
   const dispatch = useDispatch()
 
   return (
-    <div
-
-    >
+    <div>
       <div
         style={{
           margin: '10px auto',

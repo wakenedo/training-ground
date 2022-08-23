@@ -6,11 +6,15 @@ import Header from '../../components/Header'
 
 //Inner Components
 import SimpleCounter from './Exercises/SimpleCounter'
+import ReduxExercise1 from './Exercises/ReduxExercise1'
 
 //Simple Counter Exercise Imports
 import { Provider as SimpleCounterProvider } from 'react-redux'
 import SimpleCounterStore from '../Redux/Exercises/SimpleCounter/Store'
-import ReduxExercise1 from './Exercises/ReduxExercise1'
+
+//Steps Exercise
+import { Provider as ReduxExercise1Provider } from 'react-redux'
+import ReduxExercise1Store from '../Redux/Exercises/ReduxExercise1/Store'
 
 const Redux = () => {
   const location = useLocation()
@@ -20,7 +24,9 @@ const Redux = () => {
       <SimpleCounterProvider store={SimpleCounterStore}>
         <SimpleCounter />
       </SimpleCounterProvider>
-      <ReduxExercise1 />
+      <ReduxExercise1Provider store={ReduxExercise1Store}>
+        <ReduxExercise1 />
+      </ReduxExercise1Provider>
     </div>
   )
 }
