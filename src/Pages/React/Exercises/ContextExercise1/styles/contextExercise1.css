@@ -1,0 +1,15 @@
+.Container {
+  display: flex;
+  height: 200px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Container-dark {
+  background-color: #000;
+}
+
+.Container-light {
+  background-color: rgb(216, 216, 216);
+}

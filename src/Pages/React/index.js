@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'
 import Header from '../../components/Header'
 import ContextExercise1 from './Exercises/ContextExercise1'
 
+
 //Inner Components
 import Counter from './Exercises/Counter'
 import CrudExercises from './Exercises/CrudExercise'
