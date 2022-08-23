@@ -6,6 +6,11 @@ export function Steps() {
   const step = useSelector(state => state.steps.value)
   const dispatch = useDispatch()
 
+  for (var i = 0; i <= step.value; i++) {
+    const eachStep = step.value[i]
+    console.log('For loop log', eachStep)
+  }
+
   return (
     <div>
       <div
@@ -27,6 +32,7 @@ export function Steps() {
               marginRight: '10px',
             }}
           >You have taken {step} so far!</span>
+
           <button
             aria-label='Increment value'
             onClick={() => dispatch(increment())}
