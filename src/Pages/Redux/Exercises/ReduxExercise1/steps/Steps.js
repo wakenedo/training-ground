@@ -1,14 +1,19 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import Footprints from '../components/Footprints'
 import { increment, reset } from './stepsSlice'
+
 
 export function Steps() {
   const step = useSelector(state => state.steps.value)
   const dispatch = useDispatch()
 
+
   for (var i = 0; i <= step.value; i++) {
     const eachStep = step.value[i]
-    console.log('For loop log', eachStep)
+    eachStep.map((step, i) => {
+      <Footprints key={i} value={step.value} />
+    })
   }
 
   return (
@@ -17,13 +22,15 @@ export function Steps() {
         style={{
           backgroundColor: '#0f0f0f',
           width: '800px',
-          height: '210px',
-          margin: '10px auto'
+          height: 'fit-content',
+          margin: '10px auto',
+          paddingBottom: '55px'
         }}
       >
         <div
           style={{
-            paddingTop: '100px'
+            paddingTop: '100px',
+            marginBottom: '25px'
           }}
         >
           <span
@@ -46,7 +53,13 @@ export function Steps() {
             Reset Steps
           </button>
         </div>
-
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+          }}
+        >
+        </div>
       </div>
     </div>
   )
