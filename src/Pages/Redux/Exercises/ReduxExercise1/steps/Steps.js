@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Footprints from '../components/Footprints'
 import { increment, reset } from './stepsSlice'
@@ -7,14 +7,21 @@ import { increment, reset } from './stepsSlice'
 export function Steps() {
   const step = useSelector(state => state.steps.value)
   const dispatch = useDispatch()
+  let arr = []
 
-
-  for (var i = 0; i <= step.value; i++) {
-    const eachStep = step.value[i]
-    eachStep.map((step, i) => {
-      <Footprints key={i} value={step.value} />
-    })
+  const handleFootprints = () => {
+    const eachStep = step
+    for (var i = 0; i <= step.value; i++) {
+    }
+    console.log('For loop log', eachStep)
   }
+  handleFootprints()
+
+
+  useEffect(() => {
+    arr.push(...[step])
+    console.log('Step', step, arr)
+  }, [step])
 
   return (
     <div>
@@ -59,6 +66,9 @@ export function Steps() {
             flexWrap: 'wrap',
           }}
         >
+          {step ? <Footprints /> : null}
+
+
         </div>
       </div>
     </div>
